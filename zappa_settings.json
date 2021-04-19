@@ -1,0 +1,23 @@
+{
+    "imageRekognitionParcial2Punto3A": {
+        "app_function": "imageRekognitionParcial2Punto3A.lambda_handler",
+        "profile_name": "default",
+        "project_name": "lambda",
+        "runtime": "python3.8",
+	"keep_warm": false, 
+	"aws_region": "us-east-1",
+        "s3_bucket": "zappa-ij31mlp26",
+	"events": [{
+            "function": "imageRekognitionParcial2Punto3A.lambda_handler",
+            "event_source": {
+                  "arn":  "arn:aws:s3:::imagesbigdata",
+                  "events": [
+                    "s3:ObjectCreated:*" // Supported event types: http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#supported-notification-event-types
+                  ]
+               }
+            }]
+    }
+	
+}
+
+
